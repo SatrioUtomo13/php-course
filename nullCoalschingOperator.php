@@ -4,7 +4,6 @@
     ];
 
     $action = $data["action"] ?? 'nothing';
-
     echo $action;
 
 ?>
