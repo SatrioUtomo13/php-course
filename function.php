@@ -67,4 +67,61 @@
     }
     $all2 = add2(72);
     var_dump($all2);
+
+    echo '<br>';
+    echo '<br>';
+
+
+    //return type declaration
+    function sum2($a, $b): int{
+        return $a + $b;
+    }
+    var_dump (sum2("2", 5));
+
+    echo '<br><br>';
+
+    //variable function
+    function sayHello2(string $name, $strtoupper){
+        $final = $strtoupper($name);
+        echo "hello $final";
+    }
+    $call = "sayHello2";
+    $call("satrio", "strtoupper");
+
+    echo '<br><br>';
+
+    //anonymous function
+    $hi = function(string $name){
+        echo "hello $name";
+    };
+    $hi("utomo");
+
+    echo '<br><br>';
+
+
+    //arrow function
+    $firstname = "satrio";
+    $arrow = fn() => "hello $firstname";
+    echo $arrow();
+
+    echo '<br><br>';
+
+    //use method : to acces outer variable
+    $firstname2 = 'satrio';
+    $lastname2 = 'utomo';
+    $say = function() use($firstname2 , $lastname2){
+        echo "my name is $firstname2 $lastname2";
+    };
+    $say();
+
+    echo '<br><br>';
+
+    //callback function
+    function say2(string $name , callable $filter){
+        $finalName = call_user_func($filter, $name);
+        echo "hi $finalName";
+    }
+    say2('rasel', "strtoupper");
+    say2('rasel', fn($name) => strtoupper($name));
+
 ?>
