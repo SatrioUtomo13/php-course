@@ -1,6 +1,5 @@
 <?php 
 
-    
     //we can use an object to be argument in method of another object
     
     // study case : continue constructor
@@ -24,7 +23,6 @@
 
     //instance object
     $product = new getInfoProduct("freezer", "electronic", "200cm", 4000000);
-    var_dump($product);
 
 
     class Users { //create class
@@ -55,9 +53,15 @@
                     break;
                 
                 default : 
-                    return "your Profit is sdfsf $this->adv";
+                    return "your Profit is $$this->adv";
                     break;
             }
+        }
+
+        //object type
+        public function infoProduct( getInfoProduct $getInfoProduct){
+            $show = "{$getInfoProduct->name} | {$getInfoProduct->type} | {$getInfoProduct->width} | {$getInfoProduct->price} ";
+            return $show;
         }
     }
 
@@ -66,15 +70,19 @@
     //add property
     $buyer->address = "jakarta-indonesia";
 
+
     //instance object and add property
     $seller = new Users("utomo", "02", "0853212023", "BRI");
-    $seller->currency = "Rupiah";
+    $seller->currency = "dollar";
     $seller->adv = 0;
     
     echo "I'am Buyer";
     echo "<br>";
     //call object
     echo $buyer->call_buyer();
+    echo "<br>";
+    //add method infoProduct with object type
+    echo $buyer->infoProduct($product);
 
     echo "<br>";
     echo "<br>";
@@ -83,5 +91,7 @@
     echo "<br>";
     //call object
     echo $seller->advantage();
+    echo "<br>";
+
 
 ?>
