@@ -1,7 +1,7 @@
 <?php
 /* 
 video ke 3: object type
-digunakan agar dapat sebuah object dapat dijadikan type data
+digunakan agar sebuah object dapat dijadikan type data
 */
 class mobil {
     public $merk, $warna, $harga;
